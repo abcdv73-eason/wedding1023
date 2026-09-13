@@ -212,13 +212,13 @@ body{padding:0;background:#d8cbbb}.page{max-width:960px}section{padding:78px cla
 .is-visible .section-label{animation:labelReveal .7s .08s both!important}.is-visible .section-title{animation:titleReveal .9s .14s both!important}.is-visible .location-card{animation:cardReveal .9s .18s both!important}.is-visible .amap-embed{animation:mapReveal 1s .36s both!important}
 .homecoming{overflow:hidden;background:#eaddc9}.homecoming:before{content:'⌁ ︿⌁ ︿⌁';position:absolute;right:6%;bottom:8%;font-size:70px;letter-spacing:.18em;color:var(--sage);opacity:.12;transform:rotate(-8deg);pointer-events:none}.homecoming:after{content:'⌂ ︿ ︿ ︿';position:absolute;left:4%;top:18%;font-size:48px;letter-spacing:.2em;color:var(--blue2);opacity:.08;pointer-events:none}
 #place{background:#f5efe4}.location-card{background:#fffaf1;border:1px solid #cdbb9e;color:var(--ink);box-shadow:8px 9px 0 rgba(199,146,75,.32)}.location-card h3{color:var(--blue2)}.location-card p{color:#625345;opacity:1}.location-card .section-label{color:var(--blue)}.location-card .directions{border-top-color:#cdbb9e}.directions-step .d-icon{color:var(--blue)}.directions-step b{color:var(--blue2)}.contact-help{margin-top:24px;padding-top:18px;border-top:1px solid #d7c5aa;display:grid;grid-template-columns:1fr auto;gap:8px 12px;align-items:center;font-size:14px}.contact-help>span{grid-column:1/-1}.contact-phone{color:var(--blue2);font-family:var(--serif);font-size:18px;text-decoration:none}.copy-phone{min-height:42px;padding:8px 11px;border:1px solid #c7924b;background:transparent;color:var(--blue2);font-family:inherit;cursor:pointer}.copy-phone:active{transform:scale(.96)}.ending-signature{color:#d7b88b!important;letter-spacing:.16em}
-.footer{background:var(--blue2)}.music.on{animation:spin 4s linear infinite!important}.quick-nav a.active{border-color:var(--blue);color:var(--blue);background:rgba(169,52,42,.08)}.cover-date{display:inline-block;position:relative;z-index:3;padding:0 10px;background:#792b29;font-size:13px;letter-spacing:.13em;white-space:nowrap}
+.footer{background:var(--blue2)}.music.on{animation:spin 4s linear infinite!important}.quick-nav a.active{border-color:var(--blue);color:var(--blue);background:rgba(169,52,42,.08)}.cover-date{display:flex;flex-direction:column;align-items:center;position:relative;z-index:3;margin:0 auto;font-size:13px;letter-spacing:.13em;line-height:1.8;white-space:nowrap}.cover-date span{display:block;position:relative;z-index:4;padding:0 10px;background:#792b29}
 @keyframes openingPhotoSettle{from{transform:scale(1.04)}to{transform:scale(1)}}@keyframes openingText{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}@keyframes storyEvent{to{opacity:1;transform:none}}@keyframes lineGrow{from{transform:scaleY(0)}to{transform:scaleY(1)}}.copy-phone:before{content:'⧉ ';font-size:14px}
 @media (prefers-reduced-motion:reduce){.opening-photo{animation:none;transform:scale(1)}.hero-copy .eyebrow,.hero-copy h1,.opening-names,.opening-story,.opening-date{animation:none;opacity:1}.event{opacity:1!important;transform:none!important}}
 </style>
 <noscript><style>.cover-gate,.music{display:none!important}body.invitation-locked{overflow:auto}</style></noscript></head>
 <body class="invitation-locked" data-page-node-id="zFpRGEFUjdDlbQXoYb2G1V">
-<div class="cover-gate" id="coverGate" aria-label="婚礼喜帖封套"><div class="envelope-half left"></div><div class="envelope-half right"></div><div class="cover-content"><div class="cover-mark">囍</div><p class="cover-names">王万里 · 刘亚茹</p><h2>喜帖</h2><p class="cover-date">二〇二六年　十月二十三日</p><button class="open-invitation" id="openInvitation" type="button" aria-label="启，打开喜帖">启</button></div></div>
+<div class="cover-gate" id="coverGate" aria-label="婚礼喜帖封套"><div class="envelope-half left"></div><div class="envelope-half right"></div><div class="cover-content"><div class="cover-mark">囍</div><p class="cover-names">王万里 · 刘亚茹</p><h2>喜帖</h2><p class="cover-date"><span>二〇二六年</span><span>　十月二十三日</span></p><button class="open-invitation" id="openInvitation" type="button" aria-label="启，打开喜帖">启</button></div></div>
 <nav class="quick-nav" id="quickNav" inert aria-label="请柬快速导航" data-page-node-id="ltT1BM5bET6v4Q2uyelEUe"><strong data-page-node-id="E5xrYl1XJN0SCzTUMF0n3K">良辰已定</strong><a href="#top" data-page-node-id="DxRqtYg9bdFDx2TeCdqks6">开篇</a><a href="#story" data-page-node-id="ywGaFMmZAOaOkB733cIRCU">故事</a><a href="#place" data-page-node-id="fZIzBDkLAwmkV8g0qAweHO">地点</a></nav>
 <div class="paper-texture" data-page-node-id="rA1KX5dSUUxMcR0GZ1axcx"></div>
 <main class="page" id="invitationContent" inert>
@@ -297,6 +297,7 @@ const style=document.createElement('style');style.textContent='@keyframes rise{f
 </script>
 </body>
 </html>
+
 
 
 
