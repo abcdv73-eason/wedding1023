@@ -1,3 +1,4 @@
+267:const musicButton=document.getElementById('music');const bgm=document.getElementById('bgm');bgm.defaultPlaybackRate=1.2;bgm.playbackRate=1.2;let musicUserPaused=false;
 <!doctype html>
 <html lang="zh-CN" data-page-node-id="Tm27uPYChFXoizhJbOmYwQ">
 <head data-page-node-id="DoSD6Do6BrjOGtZd1604HU">
@@ -264,7 +265,7 @@ window.addEventListener('load',()=>{if(!window.__amap&&mapEl)waitAMap(initAmap,3
 // 断点切换（旋转/窗口缩放）时刷新地图尺寸，避免 PC↔手机切换后地图错位
 let rszT;addEventListener('resize',()=>{clearTimeout(rszT);rszT=setTimeout(()=>{if(window.__amap)window.__amap.resize()},200)});
 
-const musicButton=document.getElementById('music');const bgm=document.getElementById('bgm');let musicUserPaused=false;
+const musicButton=document.getElementById('music');const bgm=document.getElementById('bgm');bgm.defaultPlaybackRate=1.2;bgm.playbackRate=1.2;let musicUserPaused=false;
 const setMusicState=(playing,notify=false)=>{musicButton.classList.toggle('on',playing);musicButton.classList.toggle('playing',playing);musicButton.textContent=playing?'Ⅱ':'♫';musicButton.setAttribute('aria-pressed',String(playing));musicButton.setAttribute('aria-label',playing?'关闭背景音乐':'播放背景音乐');musicButton.title=playing?'关闭背景音乐':'播放背景音乐';if(notify)toast(playing?'背景音乐已打开':'背景音乐已关闭')};
 const playMusic=async(notify=false)=>{try{await bgm.play();setMusicState(true,notify);return true}catch(err){setMusicState(false,false);return false}};
 musicButton.addEventListener('click',async(event)=>{event.stopPropagation();if(bgm.paused){musicUserPaused=false;await playMusic(true)}else{musicUserPaused=true;bgm.pause();setMusicState(false,true)}});
