@@ -14,6 +14,8 @@ html{font-size:100%;scroll-padding-top:54px}body{overscroll-behavior-x:none}.pag
 
 .quick-nav{position:fixed;top:12px;left:50%;transform:translateX(-50%);width:calc(min(620px,100%) - 28px);display:flex;justify-content:space-between;align-items:center;padding:7px 9px 7px 13px;border:1px solid rgba(255,255,255,.55);background:rgba(247,239,220,.72);backdrop-filter:blur(16px) saturate(130%);-webkit-backdrop-filter:blur(16px) saturate(130%);box-shadow:0 5px 18px rgba(47,40,27,.1);z-index:8;opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease}.quick-nav.visible{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}.quick-nav strong{font-family:var(--serif);font-size:15px;font-weight:400;color:var(--blue2)}.quick-nav a{color:var(--ink);text-decoration:none;font-size:11px;letter-spacing:.08em;padding:5px 8px;border:1px solid transparent}.quick-nav a:active,.quick-nav a:focus-visible{border-color:var(--blue);color:var(--blue);outline:none}.btn{min-height:42px;touch-action:manipulation;transition:transform .12s ease,box-shadow .12s ease,background-color .18s ease}.btn:active,.music:active{transform:scale(.96);transition-duration:70ms}.btn:focus-visible,.music:focus-visible{outline:3px solid rgba(21,80,184,.35);outline-offset:3px}.music{touch-action:manipulation;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);background:rgba(247,239,220,.82);transition:transform .12s ease,background-color .18s ease}.photo-placeholder{touch-action:pan-y}.photo-placeholder:focus-within{outline:3px solid rgba(21,80,184,.35);outline-offset:-6px}
 /* 轻动效层：像翻阅纸笺一样，让光线、纸张和章节保持缓慢呼吸。 */
+.hero h1{animation:heroTitlePulse 4.5s ease-in-out 1.1s infinite}
+.stamp{animation:stampSway 4.5s ease-in-out infinite}
 .paper-texture{animation:paperDrift 18s linear infinite}
 .hero{overflow:hidden}
 .hero:after{content:"";position:absolute;inset:-20% -45%;background:linear-gradient(105deg,transparent 42%,rgba(169,52,42,.12) 49%,rgba(255,255,255,.28) 51%,transparent 58%);transform:translateX(-55%) rotate(-8deg);pointer-events:none;animation:inkSweep 8s 1.2s ease-in-out infinite}
@@ -34,6 +36,8 @@ section.is-visible p,section.is-visible .photo-frame,section.is-visible .names .
 @keyframes paperDrift{0%{background-position:0 0,7px 5px}50%{background-position:8px 5px,1px 10px}100%{background-position:0 0,7px 5px}}
 @keyframes inkSweep{0%,35%{transform:translateX(-55%) rotate(-8deg);opacity:0}48%{opacity:1}70%,100%{transform:translateX(55%) rotate(-8deg);opacity:0}}
 @keyframes heroCopyIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes heroTitlePulse{0%,100%{transform:scale(1);text-shadow:2px 2px 0 rgba(255,247,224,.6)}50%{transform:scale(1.035);text-shadow:3px 4px 0 rgba(199,146,75,.28)}}
+@keyframes stampSway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(2deg) translateY(-2px)}}
 @keyframes sunBreathe{0%,100%{transform:scale(.96);opacity:.4}50%{transform:scale(1.14);opacity:.72}}
 @keyframes mountainDrift{from{transform:translateX(-10px)}to{transform:translateX(10px)}}
 @keyframes plantSway{from{transform:rotate(-1deg)}to{transform:rotate(1.5deg)}}
@@ -46,6 +50,7 @@ section.is-visible p,section.is-visible .photo-frame,section.is-visible .names .
 @keyframes titleReveal{from{opacity:0;transform:translateY(16px);filter:blur(5px)}to{opacity:1;transform:none;filter:none}}
 @keyframes contentReveal{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.quick-nav,.btn,.music{transition:none}.page section{animation:none!important}.paper-texture,.hero:after,.hero .hero-copy,.hero .sun,.hero .mountains svg,.hero .plant,.date-ribbon,.scroll-hint span,.photo-frame,.timeline:before,.invite-card,section.is-visible .section-label,section.is-visible .section-title,section.is-visible p,section.is-visible .photo-frame,section.is-visible .names .meta-row,section.is-visible .timeline,section.is-visible .location-card,section.is-visible .schedule{animation:none!important}.toast{transition:opacity .15s ease}.music.on{animation:none}}
+@media (prefers-reduced-motion: reduce){.hero h1,.stamp{animation:none!important}}
 @media (prefers-reduced-transparency: reduce){.quick-nav,.music{background:var(--paper2);backdrop-filter:none;-webkit-backdrop-filter:none}}
 @media (prefers-contrast: more){.quick-nav,.music{border-color:var(--ink)}.section-label,.eyebrow,.date-ribbon{font-weight:700}}
 
