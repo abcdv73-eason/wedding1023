@@ -184,9 +184,33 @@ section.is-visible .photo-caption{animation:contentReveal .7s .45s both}
 }
 @media (min-width:768px){section{padding-top:76px;padding-bottom:82px}.intro{padding-top:68px}.photo-section{padding-top:76px}.names{padding-top:68px;padding-bottom:66px}}
 @media (min-width:1024px){section{padding-top:88px;padding-bottom:92px}.intro{padding-top:78px}.photo-section{padding-top:86px}.names{padding-top:78px;padding-bottom:76px}}
+.invitation-locked{overflow:hidden}
+.cover-gate{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at 50% 35%,#fff8e9 0,#f0dfc2 52%,#c6a779 100%);transition:opacity 1s ease,visibility 1s ease}
+.cover-gate:before{content:"";position:absolute;inset:0;opacity:.22;pointer-events:none;background-image:radial-gradient(#765f38 .55px,transparent .65px),radial-gradient(#fff .55px,transparent .65px);background-size:13px 13px,19px 19px;background-position:0 0,7px 5px;mix-blend-mode:multiply}
+.cover-card{position:relative;width:min(86vw,430px);height:min(78vh,650px);min-height:520px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;color:var(--blue2);background:linear-gradient(145deg,#fbf3e4,#ead5b2);border:1px solid rgba(118,42,37,.5);box-shadow:0 28px 70px rgba(69,42,22,.28),inset 0 0 0 8px rgba(255,249,236,.45);transform:perspective(1200px) rotate(-1.2deg);transition:transform 1.35s cubic-bezier(.2,.75,.2,1),opacity 1.05s ease}
+.cover-card:before,.cover-card:after{content:"";position:absolute;width:28px;height:28px;border-color:var(--blue);opacity:.72}
+.cover-card:before{top:20px;left:20px;border-style:solid;border-width:1px 0 0 1px}.cover-card:after{right:20px;bottom:20px;border-style:solid;border-width:0 1px 1px 0}
+.cover-flap{position:absolute;inset:0 0 50%;z-index:2;background:linear-gradient(155deg,#f8ecd6,#e2c69a);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top center;transition:transform 1.25s cubic-bezier(.2,.75,.2,1),opacity .7s ease;backface-visibility:hidden}
+.cover-seal{width:62px;height:62px;display:grid;place-items:center;margin-bottom:30px;border:1px solid var(--blue);color:var(--blue);font-family:var(--serif);font-size:31px;line-height:1;transform:rotate(-6deg);box-shadow:0 0 0 5px rgba(169,52,42,.08)}
+.cover-kicker{font-size:11px;letter-spacing:.34em;color:var(--blue);margin-bottom:18px}.cover-title{font-family:var(--serif);font-size:clamp(38px,10vw,58px);font-weight:400;letter-spacing:.14em}.cover-subtitle{margin-top:15px;font-family:var(--serif);font-size:17px;letter-spacing:.2em}.cover-date{margin-top:28px;padding:8px 17px;color:#fff;background:var(--blue);font-size:12px;letter-spacing:.18em;transform:rotate(-2deg);box-shadow:5px 6px 0 rgba(199,146,75,.65)}
+.open-invitation{position:absolute;bottom:45px;border:1px solid var(--blue);padding:11px 24px;color:var(--blue);background:rgba(255,249,236,.58);font:inherit;font-size:12px;letter-spacing:.18em;cursor:pointer;transition:background .3s ease,transform .3s ease}.open-invitation:hover{background:#fff9ec;transform:translateY(-2px)}.open-invitation:after{content:"↓";display:inline-block;margin-left:9px;transition:transform .3s ease}.open-invitation:hover:after{transform:translateY(3px)}
+.cover-gate.is-opening{pointer-events:none}.cover-gate.is-opening .cover-flap{transform:perspective(900px) rotateX(-115deg);opacity:.2}.cover-gate.is-opening .cover-card{transform:perspective(1200px) translateY(-8px) rotate(-1.2deg)}.cover-gate.is-open{opacity:0;visibility:hidden;pointer-events:none}.cover-gate.is-open .cover-card{transform:perspective(1200px) translateY(-110%) rotate(-3deg);opacity:0}
+body.invitation-open .hero{animation:invitationArrive 1.4s .15s both}@keyframes invitationArrive{from{opacity:.3;transform:translateY(22px)}to{opacity:1;transform:none}}
+@media (max-width:767px){.cover-gate{padding:18px}.cover-card{width:min(89vw,410px);height:min(82vh,620px);min-height:500px}.cover-title{font-size:39px}.open-invitation{bottom:38px}}
 </style>
 </head>
-<body data-page-node-id="zFpRGEFUjdDlbQXoYb2G1V">
+<body class="invitation-locked" data-page-node-id="zFpRGEFUjdDlbQXoYb2G1V">
+<div class="cover-gate" id="coverGate" aria-label="婚礼请柬封面">
+  <div class="cover-card">
+    <div class="cover-flap" aria-hidden="true"></div>
+    <div class="cover-seal" aria-hidden="true">囍</div>
+    <div class="cover-kicker">WEDDING INVITATION</div>
+    <div class="cover-title">良辰已定</div>
+    <div class="cover-subtitle">王万里&nbsp;&nbsp;刘亚茹</div>
+    <div class="cover-date">2026 · 10 · 23</div>
+    <button class="open-invitation" id="openInvitation" type="button">打开请柬</button>
+  </div>
+</div>
 <nav class="quick-nav" id="quickNav" aria-label="请柬快速导航" data-page-node-id="ltT1BM5bET6v4Q2uyelEUe"><strong data-page-node-id="E5xrYl1XJN0SCzTUMF0n3K">良辰已定</strong><a href="#top" data-page-node-id="DxRqtYg9bdFDx2TeCdqks6">封面</a><a href="#story" data-page-node-id="ywGaFMmZAOaOkB733cIRCU">故事</a><a href="#place" data-page-node-id="fZIzBDkLAwmkV8g0qAweHO">地点</a></nav>
 <div class="paper-texture" data-page-node-id="rA1KX5dSUUxMcR0GZ1axcx"></div>
 <main class="page" data-page-node-id="8iQSPzR9MCc5SHT2xgJwsa">
@@ -213,7 +237,7 @@ section.is-visible .photo-caption{animation:contentReveal .7s .45s both}
   <div class="invite-card-meta">2026 · 10 · 23　广西博白 · 学田村王屋队</div>
 </div><button class="btn" style="margin-top:20px" onclick="document.getElementById('top').scrollIntoView()" data-page-node-id="KkIrASjySrjFcTVtUtJDlE">回到开头 ↑</button></footer>
 </main>
-<audio id="bgm" src="wedding-music.mp3?v=20260913-1" autoplay playsinline loop preload="auto"></audio><button class="music" id="music" aria-label="播放背景音乐" aria-pressed="false" title="播放背景音乐" data-page-node-id="ZQMQATOWo5NOOyafJJCwwZ">♫</button><div class="toast" id="toast" data-page-node-id="N564HhZWDPmlO0ntz7PjoS"></div>
+<audio id="bgm" src="wedding-music.mp3?v=20260913-1" playsinline loop preload="auto"></audio><button class="music" id="music" aria-label="播放背景音乐" aria-pressed="false" title="播放背景音乐" data-page-node-id="ZQMQATOWo5NOOyafJJCwwZ">♫</button><div class="toast" id="toast" data-page-node-id="N564HhZWDPmlO0ntz7PjoS"></div>
 <script type="text/javascript">
   // 高德地图 JS API 2.0 — 直连模式：安全密钥直接配置在前端（体验优先，去掉代理跳转）。
   // 说明：key 与 securityJsCode 都来自高德控制台「Web端(JS API)」类型的 key，
@@ -264,14 +288,11 @@ window.addEventListener('load',()=>{if(!window.__amap&&mapEl)waitAMap(initAmap,3
 // 断点切换（旋转/窗口缩放）时刷新地图尺寸，避免 PC↔手机切换后地图错位
 let rszT;addEventListener('resize',()=>{clearTimeout(rszT);rszT=setTimeout(()=>{if(window.__amap)window.__amap.resize()},200)});
 
-const musicButton=document.getElementById('music');const bgm=document.getElementById('bgm');const musicRate=1.2;let musicUserPaused=false;let musicPlayPromise=null;const applyMusicRate=()=>{bgm.defaultPlaybackRate=musicRate;bgm.playbackRate=musicRate;if('preservesPitch' in bgm)bgm.preservesPitch=true;if('mozPreservesPitch' in bgm)bgm.mozPreservesPitch=true;if('webkitPreservesPitch' in bgm)bgm.webkitPreservesPitch=true};applyMusicRate();bgm.addEventListener('loadedmetadata',applyMusicRate);bgm.addEventListener('canplay',applyMusicRate);
+const musicButton=document.getElementById('music');const bgm=document.getElementById('bgm');const coverGate=document.getElementById('coverGate');const openInvitation=document.getElementById('openInvitation');const musicRate=1.2;let musicUserPaused=false;let musicPlayPromise=null;const applyMusicRate=()=>{bgm.defaultPlaybackRate=musicRate;bgm.playbackRate=musicRate;if('preservesPitch' in bgm)bgm.preservesPitch=true;if('mozPreservesPitch' in bgm)bgm.mozPreservesPitch=true;if('webkitPreservesPitch' in bgm)bgm.webkitPreservesPitch=true};applyMusicRate();bgm.addEventListener('loadedmetadata',applyMusicRate);bgm.addEventListener('canplay',applyMusicRate);
 const setMusicState=(playing,notify=false)=>{musicButton.classList.toggle('on',playing);musicButton.classList.toggle('playing',playing);musicButton.textContent=playing?'Ⅱ':'♫';musicButton.setAttribute('aria-pressed',String(playing));musicButton.setAttribute('aria-label',playing?'关闭背景音乐':'播放背景音乐');musicButton.title=playing?'关闭背景音乐':'播放背景音乐';if(notify)toast(playing?'背景音乐已打开':'背景音乐已关闭')};
 const playMusic=async(notify=false)=>{if(!bgm.paused){applyMusicRate();setMusicState(true,notify);return true}if(musicPlayPromise)return musicPlayPromise;musicPlayPromise=(async()=>{try{applyMusicRate();await bgm.play();applyMusicRate();setMusicState(true,notify);return true}catch(err){setMusicState(false,false);return false}finally{musicPlayPromise=null}})();return musicPlayPromise};
 musicButton.addEventListener('click',async(event)=>{event.stopPropagation();if(bgm.paused){musicUserPaused=false;await playMusic(true)}else{musicUserPaused=true;bgm.pause();setMusicState(false,true)}});
-const resumeMusicOnGesture=async(event)=>{if(event.target&&event.target.closest&&event.target.closest('#music'))return;if(!musicUserPaused&&bgm.paused&&await playMusic(false)){window.removeEventListener('pointerdown',resumeMusicOnGesture);window.removeEventListener('keydown',resumeMusicOnGesture)}};
-window.addEventListener('pointerdown',resumeMusicOnGesture,{passive:true});window.addEventListener('keydown',resumeMusicOnGesture);
-window.addEventListener('scroll',()=>{if(!musicUserPaused&&bgm.paused)playMusic(false)},{passive:true});
-window.addEventListener('load',()=>{playMusic(false)});
+openInvitation.addEventListener('click',async()=>{if(coverGate.classList.contains('is-opening'))return;musicUserPaused=false;coverGate.classList.add('is-opening');await playMusic(false);setTimeout(()=>{coverGate.classList.add('is-open');document.body.classList.remove('invitation-locked');document.body.classList.add('invitation-open');openInvitation.blur()},1250)});
 bgm.addEventListener('play',()=>setMusicState(true));bgm.addEventListener('pause',()=>setMusicState(false));bgm.addEventListener('ended',()=>setMusicState(false));
 const observer=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('is-visible');x.target.style.animation='rise .7s cubic-bezier(.2,.8,.2,1) both';observer.unobserve(x.target)}}),{threshold:.12});document.querySelectorAll('section').forEach(s=>observer.observe(s));
 const style=document.createElement('style');style.textContent='@keyframes rise{from{opacity:.2;transform:translateY(18px)}to{opacity:1;transform:none}}';document.head.appendChild(style);
