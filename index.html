@@ -209,18 +209,27 @@ body.invitation-open .hero{animation:invitationArrive 1.4s .15s both}@keyframes 
 .open-invitation{z-index:4;border-color:#f0d49e;color:#fff4d9;background:rgba(91,30,26,.76)}.open-invitation:hover{background:#a13c33}
 .cover-gate.is-opening .cover-flap{transform:perspective(900px) rotateX(-112deg);opacity:.18}.cover-gate.is-opening .cover-card{transform:translateY(-3vh) rotateX(-4deg) rotateZ(-.5deg)}.cover-gate.is-open .cover-card{transform:translateY(-118%) rotateX(-8deg) rotateZ(-1deg);opacity:0}
 @media (max-width:767px){.cover-card{height:min(82vh,620px);min-height:500px}.cover-gate.is-opening .cover-card{transform:translateY(-2vh) rotateX(-3deg) rotateZ(-.35deg)}}
+/* Red wedding post envelope with an inner paper pull-out */
+.cover-card{overflow:hidden;background:linear-gradient(145deg,#a51f28 0%,#8d1720 55%,#72131a 100%);border-color:rgba(255,231,190,.65);box-shadow:0 32px 78px rgba(64,19,18,.42),inset 0 0 0 7px rgba(255,229,184,.12)}
+.cover-card:before,.cover-card:after{border-color:#f0cd91}.cover-flap{display:none}
+.cover-insert{position:absolute;left:11%;right:11%;top:10%;bottom:-62%;z-index:1;padding:44px 22px 30px;background:#f6edda;color:#6f2926;border:1px solid rgba(111,41,38,.38);box-shadow:0 8px 18px rgba(48,14,16,.2);transform:translateY(68%) rotate(-1deg);transition:transform 1.28s cubic-bezier(.18,.76,.2,1),box-shadow 1.28s ease}
+.cover-insert:before{content:"";position:absolute;inset:16px;border:1px solid rgba(142,44,38,.48);background:repeating-linear-gradient(to bottom,transparent 0 26px,rgba(142,44,38,.1) 27px 28px);opacity:.55}
+.cover-insert-title{position:relative;font-family:var(--serif);font-size:42px;text-align:center;letter-spacing:.2em}.cover-insert-copy{position:relative;margin-top:18px;text-align:center;font-family:var(--serif);font-size:14px;line-height:2.15;letter-spacing:.15em}.cover-insert-seal{position:relative;width:30px;height:30px;margin:22px auto 0;border:1px solid #a51f28;display:grid;place-items:center;font-family:var(--serif);font-size:17px;transform:rotate(-5deg)}
+.cover-band{position:absolute;top:0;bottom:0;left:50%;z-index:3;width:112px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;padding-top:82px;background:linear-gradient(90deg,#ead8b3,#f7edda 48%,#dfc18d);box-shadow:0 0 18px rgba(57,14,18,.18);color:#6d2523}
+.cover-band:before,.cover-band:after{content:"";position:absolute;left:16px;right:16px;height:1px;background:rgba(109,37,35,.38)}.cover-band:before{top:55px}.cover-band:after{bottom:55px}
+.cover-band-mark{font-family:var(--serif);font-size:42px;line-height:1.1}.cover-band-title{margin-top:18px;font-family:var(--serif);font-size:29px;letter-spacing:.2em;writing-mode:vertical-rl}.cover-band-names{position:absolute;bottom:104px;font-family:var(--serif);font-size:12px;writing-mode:vertical-rl;letter-spacing:.16em}.cover-band-date{position:absolute;bottom:62px;font-size:9px;letter-spacing:.12em;writing-mode:vertical-rl}
+.open-invitation{bottom:30px;z-index:5;border-color:#f0d49e;background:rgba(111,19,26,.82)}
+.cover-gate.is-opening .cover-insert{transform:translateY(-18%) rotate(-1deg);box-shadow:0 18px 28px rgba(48,14,16,.25)}.cover-gate.is-opening .cover-band{box-shadow:0 0 24px rgba(57,14,18,.24)}
+@media (max-width:767px){.cover-band{width:98px;padding-top:74px}.cover-band-mark{font-size:38px}.cover-band-title{font-size:26px}.cover-band-names{bottom:96px}.cover-band-date{bottom:58px}.cover-insert{padding-top:36px}}
 </style>
 </head>
 <body class="invitation-locked" data-page-node-id="zFpRGEFUjdDlbQXoYb2G1V">
-<div class="cover-gate" id="coverGate" aria-label="婚礼请柬封面">
+<div class="cover-gate" id="coverGate" aria-label="婚礼喜帖封面">
   <div class="cover-card">
     <div class="cover-flap" aria-hidden="true"></div>
-    <div class="cover-seal" aria-hidden="true">囍</div>
-    <div class="cover-kicker">WEDDING INVITATION</div>
-    <div class="cover-title">良辰已定</div>
-    <div class="cover-subtitle">王万里&nbsp;&nbsp;刘亚茹</div>
-    <div class="cover-date">2026 · 10 · 23</div>
-    <button class="open-invitation" id="openInvitation" type="button">打开请柬</button>
+    <div class="cover-insert" aria-hidden="true"><div class="cover-insert-title">喜帖</div><div class="cover-insert-copy">良辰已定<br>王万里 · 刘亚茹<br>2026 · 10 · 23</div><div class="cover-insert-seal">囍</div></div>
+    <div class="cover-band"><div class="cover-band-mark">囍</div><div class="cover-band-title">喜帖</div><div class="cover-band-names">王万里 · 刘亚茹</div><div class="cover-band-date">2026 · 10 · 23</div></div>
+    <button class="open-invitation" id="openInvitation" type="button">打开喜帖</button>
   </div>
 </div>
 <nav class="quick-nav" id="quickNav" aria-label="请柬快速导航" data-page-node-id="ltT1BM5bET6v4Q2uyelEUe"><strong data-page-node-id="E5xrYl1XJN0SCzTUMF0n3K">良辰已定</strong><a href="#top" data-page-node-id="DxRqtYg9bdFDx2TeCdqks6">封面</a><a href="#story" data-page-node-id="ywGaFMmZAOaOkB733cIRCU">故事</a><a href="#place" data-page-node-id="fZIzBDkLAwmkV8g0qAweHO">地点</a></nav>
@@ -300,16 +309,13 @@ window.addEventListener('load',()=>{if(!window.__amap&&mapEl)waitAMap(initAmap,3
 // 断点切换（旋转/窗口缩放）时刷新地图尺寸，避免 PC↔手机切换后地图错位
 let rszT;addEventListener('resize',()=>{clearTimeout(rszT);rszT=setTimeout(()=>{if(window.__amap)window.__amap.resize()},200)});
 
-const musicButton=document.getElementById('music');const bgm=document.getElementById('bgm');const coverGate=document.getElementById('coverGate');const openInvitation=document.getElementById('openInvitation');let musicPlayPromise=null;let musicUserPaused=false;let musicResumeTimer=null;
+const musicButton=document.getElementById('music');const bgm=document.getElementById('bgm');const coverGate=document.getElementById('coverGate');const openInvitation=document.getElementById('openInvitation');let musicUserPaused=false;let musicPlayPromise=null;let musicRecoveryBusy=false;let musicLastTime=0;let musicLastProgress=Date.now();let musicWaitingTimer=null;
 const setMusicState=(playing,notify=false)=>{musicButton.classList.toggle('on',playing);musicButton.classList.toggle('playing',playing);musicButton.textContent='♫';musicButton.setAttribute('aria-pressed',String(playing));musicButton.setAttribute('aria-label',playing?'关闭背景音乐':'播放背景音乐');musicButton.title=playing?'关闭背景音乐':'播放背景音乐';if(notify)toast(playing?'背景音乐已打开':'背景音乐已关闭')};
 const playMusic=async(notify=false)=>{if(!bgm.paused){setMusicState(true,notify);return true}if(musicPlayPromise)return musicPlayPromise;musicPlayPromise=(async()=>{try{await bgm.play();setMusicState(true,notify);return true}catch(err){setMusicState(false,false);return false}finally{musicPlayPromise=null}})();return musicPlayPromise};
-musicButton.addEventListener('click',async(event)=>{event.stopPropagation();if(bgm.paused){musicUserPaused=false;await playMusic(true)}else{musicUserPaused=true;clearTimeout(musicResumeTimer);bgm.pause();setMusicState(false,true)}});
+musicButton.addEventListener('click',async(event)=>{event.stopPropagation();if(bgm.paused){musicUserPaused=false;await playMusic(true)}else{musicUserPaused=true;bgm.pause();setMusicState(false,true)}});
 openInvitation.addEventListener('click',async()=>{if(coverGate.classList.contains('is-opening'))return;musicUserPaused=false;coverGate.classList.add('is-opening');await playMusic(false);setTimeout(()=>{coverGate.classList.add('is-open');document.body.classList.remove('invitation-locked');document.body.classList.add('invitation-open');openInvitation.blur()},1500)});
-// 持续循环交给原生 audio loop。若移动端因系统音频策略意外暂停，只在可见页面尝试原地续播，不调用 load()。
-bgm.addEventListener('play',()=>setMusicState(true));
-bgm.addEventListener('playing',()=>setMusicState(true));
-bgm.addEventListener('pause',()=>{setMusicState(false);if(!musicUserPaused&&document.visibilityState==='visible'){clearTimeout(musicResumeTimer);musicResumeTimer=setTimeout(()=>playMusic(false),350)}});
-bgm.addEventListener('ended',()=>setMusicState(false));
+const recoverMusic=()=>{if(musicUserPaused||bgm.paused||musicRecoveryBusy)return;musicRecoveryBusy=true;setMusicState(false);const position=bgm.currentTime;bgm.pause();bgm.load();const resume=()=>{try{if(Number.isFinite(position)&&Number.isFinite(bgm.duration))bgm.currentTime=Math.min(position,bgm.duration-.1)}catch(err){};musicRecoveryBusy=false;playMusic(false)};bgm.addEventListener('canplay',resume,{once:true});setTimeout(()=>{if(musicRecoveryBusy){musicRecoveryBusy=false;playMusic(false)}},2800)};
+bgm.addEventListener('play',()=>setMusicState(true));bgm.addEventListener('playing',()=>{clearTimeout(musicWaitingTimer);musicLastTime=bgm.currentTime;musicLastProgress=Date.now();setMusicState(true)});bgm.addEventListener('timeupdate',()=>{if(bgm.currentTime!==musicLastTime){musicLastTime=bgm.currentTime;musicLastProgress=Date.now()}});bgm.addEventListener('waiting',()=>{clearTimeout(musicWaitingTimer);musicWaitingTimer=setTimeout(recoverMusic,3200)});bgm.addEventListener('stalled',()=>{clearTimeout(musicWaitingTimer);musicWaitingTimer=setTimeout(recoverMusic,3200)});bgm.addEventListener('pause',()=>setMusicState(false));bgm.addEventListener('ended',()=>setMusicState(false));setInterval(()=>{if(!musicUserPaused&&!bgm.paused&&Date.now()-musicLastProgress>5000)recoverMusic()},2000);
 const observer=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('is-visible');x.target.style.animation='rise .7s cubic-bezier(.2,.8,.2,1) both';observer.unobserve(x.target)}}),{threshold:.12});document.querySelectorAll('section').forEach(s=>observer.observe(s));
 const style=document.createElement('style');style.textContent='@keyframes rise{from{opacity:.2;transform:translateY(18px)}to{opacity:1;transform:none}}';document.head.appendChild(style);
 </script>
